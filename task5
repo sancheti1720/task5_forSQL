@@ -1,0 +1,36 @@
+SELECT customers.customer_id, customers.name, orders.order_id, orders.product, orders.amount
+FROM customers
+INNER JOIN orders
+ON customers.customer_id = orders.customer_id;
+
+SELECT customers.customer_id, customers.name, orders.order_id, orders.product, orders.amount
+FROM customers
+LEFT JOIN orders
+ON customers.customer_id = orders.customer_id;
+
+SELECT customers.customer_id, customers.name, orders.order_id, orders.product, orders.amount
+FROM customers
+RIGHT JOIN orders
+ON customers.customer_id = orders.customer_id;
+
+SELECT customers.customer_id, customers.name, orders.order_id, orders.product, orders.amount
+FROM customers
+LEFT JOIN orders
+ON customers.customer_id = orders.customer_id
+
+
+SELECT customers.customer_id, customers.name, orders.order_id, orders.product, orders.amount
+FROM customers
+RIGHT JOIN orders
+ON customers.customer_id = orders.customer_id;
+
+SELECT c1.name AS customer1, c2.name AS customer2, c1.city
+FROM customers c1
+JOIN customers c2
+ON c1.city = c2.city AND c1.customer_id <> c2.customer_id;
+
+SELECT customers.name, orders.product, payments.amount_paid
+FROM customers
+JOIN orders ON customers.customer_id = orders.customer_id
+JOIN payments ON orders.order_id = payments.order_id;
+
